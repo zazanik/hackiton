@@ -1,0 +1,128 @@
+body {
+	margin: 0;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 16px;
+	background-color: #fffbff;
+	box-sizing: border-box;
+}
+
+.container {
+	margin: 0 auto;
+	width: 1200px;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 70px;
+	background-color: #00a1f1;
+}
+
+header .header-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+header .logo {
+	width: 110px;
+}
+
+header .logo a {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+header .text {
+	color: #fff;
+	font-size: 32px;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.red {
+	color: red;
+}
+
+.blue {
+	color: blue;
+}
+
+.green {
+	color: green;
+}
+
+main {
+	padding: 30px 0;
+}
+
+.title {
+	font-size: 30px;
+	text-align: center;
+}
+
+.smart-office .four-office-plan {
+	position: relative;
+	margin: 0 auto;
+}
+
+.smart-office .four-office-plan img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.info-icon {
+	padding: 3px 10px 3px 5px;
+	margin-bottom: 1px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 90px;
+	color: #000;
+	font-size: 24px;
+	background: #ccc;
+	border-radius: 4px;
+}
+
+.icon {
+	display: flex;
+	justify-content: center;
+	min-width: 25px;
+	margin-right: 10px;
+}
+
+.result {
+	font-size: 16px;
+}
+
+.office-1 {
+	position: absolute;
+	top: 42px;
+	left: 71px;
+	border-radius: 3px;
+}
+
+.office-2 {
+	position: absolute;
+	top: 42px;
+	left: 355px;
+}
+
+footer {
+	min-height: 60px;
+	background-color: #262624;
+}
+
+.footer-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 60px;
+	color: #fff;
+	font-size: 12px;
+}
