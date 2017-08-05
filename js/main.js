@@ -35,6 +35,10 @@ var data = [
             "id": "T2",
             "value": "31"
         },
+        {
+            "id": "O2",
+            "value": true
+        }
     ]
 ;
 
@@ -77,6 +81,29 @@ infoPosition[1] = {
     }
 };
 
+infoPosition[2] = {
+   "T": {
+       "top": 115,
+       "left": 370
+    },
+    "W": {
+        "top": 150,
+        "left": 370
+    },
+    "M": {
+        "top": 185,
+        "left": 370
+    },
+    "L": {
+        "top": 220,
+        "left": 370
+    },
+    "O": {
+        "top": 255,
+        "left": 370
+    }
+};
+
 var firstChar;
 var idNumberChar;
 var infoIcon = $('body').find('.info-icon');
@@ -102,7 +129,7 @@ function main(id, value) {
                     if (value < recomendParametrs.temperature.cold) {
                         clone.find('.icon').addClass('fa-thermometer-empty blue');
                     } else {
-                        clone.find('.icon').addClass('fa-thermometer-full green');
+                        clone.find('.icon').addClass('fa-thermometer-half green');
                     }
                 }
             });
@@ -145,10 +172,10 @@ function main(id, value) {
 		    renderInfoIcon(id, value, function(){
                 if (value === true) {
                     clone.find('.icon').addClass('fa-window-maximize red');
-                    clone.find('.result').html('Opened');
+                    clone.find('.result').html('Open');
                 } else {
                     clone.find('.icon').addClass('fa-window-maximize green');
-                    clone.find('.result').html('Closed');
+                    clone.find('.result').html('Close');
                 }
             });
 		    break;
