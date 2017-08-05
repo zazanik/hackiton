@@ -1,0 +1,49 @@
+body {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 16px;
+	min-width: 1200px;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.red {
+	color: red;
+}
+
+.blue {
+	color: blue;
+}
+
+.green {
+	color: green;
+}
+
+.title {
+	font-size: 30px;
+	text-align: center;
+}
+
+.smart-office .four-office-plan {
+	position: relative;
+	margin: 0 auto;
+}
+
+.smart-office .four-office-plan img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.info-icon {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	color: #000;
+	font-size: 24px;
+}
+
+.icon {
+	margin-right: 10px;
+}
