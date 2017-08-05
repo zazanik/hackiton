@@ -38,13 +38,25 @@ body {
 }
 
 .info-icon {
+	margin-bottom: 5px;
 	display: flex;
 	align-items: center;
-	position: absolute;
 	color: #000;
 	font-size: 24px;
 }
 
 .icon {
 	margin-right: 10px;
+}
+
+.office-1 {
+	position: absolute;
+	top: 115px;
+	left: 105px;	
+}
+
+.office-2 {
+	position: absolute;
+	top: 115px;
+	left: 370px;
 }

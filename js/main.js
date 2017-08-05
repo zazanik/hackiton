@@ -1,19 +1,19 @@
-// var socket = io('http://192.168.1.4:8888');
+var socket = io('http://10.0.0.219:7124');
 
-// socket.on('connection', function(data){
-// 	socket.emit('message', 'hello there');
-// 	console.log(data);
-// });
+socket.on('connection', function(data){
+	socket.emit('message', 'hello there');
+	console.log(data);
+});
 
 
-// socket.on('message', function(data){
-// 	console.log(data);
-// });
+socket.on('message', function(data){
+	console.log(data);
+});
 
 var data = [
         {
             "id": "T1",
-            "value": "21"
+            "value": "8"
         },
         {
             "id": "W1",
@@ -42,8 +42,6 @@ var data = [
     ]
 ;
 
-var infoPosition = [];
-
 recomendParametrs = [];
 
 recomendParametrs = {
@@ -58,58 +56,10 @@ recomendParametrs = {
 	"light": 500
 }
 
-infoPosition[1] = {
-   "T": {
-       "top": 115,
-       "left": 105
-    },
-    "W": {
-    	"top": 150,
-    	"left": 105
-    },
-    "M": {
-    	"top": 185,
-    	"left": 105
-    },
-    "L": {
-    	"top": 220,
-    	"left": 105
-    },
-    "O": {
-    	"top": 255,
-    	"left": 105
-    }
-};
-
-infoPosition[2] = {
-   "T": {
-       "top": 115,
-       "left": 370
-    },
-    "W": {
-        "top": 150,
-        "left": 370
-    },
-    "M": {
-        "top": 185,
-        "left": 370
-    },
-    "L": {
-        "top": 220,
-        "left": 370
-    },
-    "O": {
-        "top": 255,
-        "left": 370
-    }
-};
-
 var firstChar;
 var idNumberChar;
 var infoIcon = $('body').find('.info-icon');
-var container = $('body').find('.four-office-plan');
 var clone;
-
 
 for (var i = 0; i < data.length; i++) {
 	main(data[i].id, data[i].value);
@@ -194,15 +144,14 @@ function renderInfoIcon(id, value, callback) {
 	firstChar = id.charAt(0);
     idNumberChar = id.charAt(1);
 
+    var office = '.office-' + idNumberChar;
+
+    var container = $('body').find(office);
+
 	$('body').find(id).remove();
     clone = $(infoIcon).clone();
-    clone
-	    .addClass(id)
-	    .removeClass('hidden')
-	    .css({
-    	    'top': infoPosition[idNumberChar][firstChar].top,
-    	    'left': infoPosition[idNumberChar][firstChar].left
-        });
+    clone.addClass(id).removeClass('hidden');
+	    
     clone.find('.result').html(value);
 
 	if (callback) {
@@ -211,4 +160,3 @@ function renderInfoIcon(id, value, callback) {
     
     container.append(clone);
 }
-
