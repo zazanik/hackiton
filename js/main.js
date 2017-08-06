@@ -113,7 +113,7 @@ function main(id, value) {
                 if (value < recomendParametrs.light) {
                     clone.find('.icon').addClass('fa-lightbulb-o red');
                 } else {
-                    clone.find('.icon').addClass('fa-user-secret green');
+                    clone.find('.icon').addClass('fa-lightbulb-o green');
                 }
             });
 		    break;

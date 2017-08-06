@@ -5,6 +5,7 @@
     <link rel="shortcut icon" href="images/mev-favicon-32x32-c.png">
     <title>MEV | Smart Office</title>
     <link rel="stylesheet" type="text/css" href="styles/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Sedgwick+Ave" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
 </head>
@@ -20,7 +21,7 @@
     <main class="smart-office">
         <section>
             <div class="container">
-                <h2 class="title">Scheme of 4 floors</h2>
+                <h2 class="title">Scheme of 4 floors:</h2>
                 <div class="four-office-plan">
                     <img src="images/four-office-2.png">
                     <div class="office office-1"></div>
@@ -30,13 +31,68 @@
                         <span class="result"></span>
                     </div>
                 </div>
+
+                <div class="legend">
+                    <h3 class="title">Legend:</h3>
+                    <ul>
+                        <li class="name">Temperature:</li>
+                        <li>
+                            <span class="icon fa fa-thermometer-full red"></span>
+                            <span class="text">The temperature is more than allowable</span>
+                        </li>
+                        <li>
+                            <span class="icon fa fa-thermometer-half green"></span>
+                            <span class="text">Normal temperature</span>
+                        </li>
+                        <li>
+                            <span class="icon fa fa-thermometer-empty blue"></span>
+                            <span class="text">The temperature is below normal</span>
+                        </li>
+                        <li class="name">Wet:</li>
+                        <li>
+                            <span class="icon fa fa-tint red"></span>
+                            <span class="text">Not normal wet</span>
+                        </li>
+                        <li>
+                            <span class="icon fa fa-tint green"></span>
+                            <span class="text">Normal wet</span>
+                        </li>
+                        <li class="name">Move:</li>
+                        <li>
+                            <span class="icon fa fa-user-secret red"></span>
+                            <span class="text">Someone moved in room</span>
+                        </li>
+                        <li>
+                            <span class="icon fa fa-user-secret green"></span>
+                            <span class="text">No one move</span>
+                        </li>
+                        <li class="name">Light:</li>
+                        <li>
+                            <span class="icon fa fa-lightbulb-o red"></span>
+                            <span class="text">Insufficient illumination</span>
+                        </li>
+                        <li>
+                            <span class="icon fa fa-lightbulb-o green"></span>
+                            <span class="text">Normal illumination</span>
+                        </li>
+                        <li class="name">Window status:</li>
+                        <li>
+                            <span class="icon fa fa-window-maximize red"></span>
+                            <span class="text">Window open</span>
+                        </li>
+                        <li>
+                            <span class="icon fa fa-window-maximize green"></span>
+                            <span class="text">Window close</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
     </main>
     <footer>
         <div class="container footer-container">
             <div class="copyright">&#169; 2017, MEV, ARDUINO HACKATHON</div>
-            <div class="command">Команда: Может что то и получится!</div>
+            <div class="command">Команда: "Может что то и получится"!</div>
         </div>
     </footer>
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
