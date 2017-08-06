@@ -1,14 +1,15 @@
-// var socket = io('http://10.0.0.219:7124');
-//
-// socket.on('connection', function(data){
-// 	socket.emit('message', 'hello there');
-// 	console.log(data);
-// });
-//
-//
-// socket.on('message', function(data){
-// 	console.log(data);
-// });
+var socket = io('http://10.0.0.206:8888');
+
+socket.on('connection', function(data){
+	socket.emit('message', 'hello there');
+	console.log(data);
+});
+
+
+socket.on('message', function(data){
+	console.log(data);
+    main(data.id, data.value);
+});
 
 var data = [
         {
@@ -58,12 +59,12 @@ recomendParametrs = {
 
 var firstChar;
 var idNumberChar;
-var infoIcon = $('body').find('.info-icon');
+var infoIcon = $('body').find('.info-icon-prototype');
 var clone;
 
-for (var i = 0; i < data.length; i++) {
-	main(data[i].id, data[i].value);
-}
+// for (var i = 0; i < data.length; i++) {
+// 	main(data[i].id, data[i].value);
+// }
 
 function main(id, value) {
     
@@ -119,13 +120,14 @@ function main(id, value) {
 		    break;
 
 		case 'O': 
-		    renderInfoIcon(id, value, function(){
+		    renderInfoIcon(id, value, function(clone){
                 if (value === true) {
                     clone.find('.icon').addClass('fa-window-maximize red');
                     clone.find('.result').html('Opened');
                 } else {
-                    clone.find('.icon').addClass('fa-window-maximize green');
-                    clone.find('.result').html('Closed');
+                    clone.addClass('hidden');
+                    clone.find('.icon').addClass('fa-window-maximize green hidden');
+                    clone.find('.result').html('');
                 }
             });
 		    break;
@@ -148,9 +150,21 @@ function renderInfoIcon(id, value, callback) {
 
     var container = $('body').find(office);
 
-	$('body').find(id).remove();
+    if ($('body').find('.'+id).length) {
+        var selector = $('body').find('.'+id);
+
+        selector.find('.result').html(value);
+
+        if (callback) {
+            callback(selector);
+        }
+
+        return true;
+    }
+
+
     clone = $(infoIcon).clone();
-    clone.addClass(id).removeClass('hidden');
+    clone.addClass(id).removeClass('hidden info-icon-prototype');
 	    
     clone.find('.result').html(value);
 
@@ -160,3 +174,7 @@ function renderInfoIcon(id, value, callback) {
     
     container.append(clone);
 }
+
+$('body').on('click', '.title', function(){
+    $(this).next('.accordion-content').stop().slideToggle('300');
+})

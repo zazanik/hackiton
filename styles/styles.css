@@ -41,8 +41,16 @@ header .text {
 	font-family: 'Sedgwick Ave', cursive;
 }
 
+.accordion-content {
+	display: none;
+}
+
 .hidden {
 	display: none !important;
+}
+
+.not-active {
+	opacity: 0.5;
 }
 
 .red {
@@ -59,17 +67,24 @@ header .text {
 
 main {
 	padding: 30px 0;
+	min-height: calc(100vh - 190px);
 }
 
 .title {
+	margin: 0 0 20px 0;
+	padding: 25px 0;
+	background-color: #545fe6;
+	color: #fff;
 	font-size: 40px;
 	text-align: center;
 	font-family: 'Sedgwick Ave', cursive;
+	border-radius: 4px;
+	cursor: pointer;
 }
 
 .smart-office .four-office-plan {
 	position: relative;
-	margin: 0 auto;
+	margin: 0 auto 20px;
 }
 
 .smart-office .four-office-plan img {
@@ -116,7 +131,7 @@ main {
 }
 
 .legend {
-	padding: 30px 0 40px;
+	padding: 0 0 40px;
 }
 
 .legend .name {
